@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stationeryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="RequisitionForms">
+    <Key>
+      <PropertyRef Name="FormNumber" />
+    </Key>
+    <Property Name="FormNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApprovedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="ReceivedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateReceived" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Notification" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="stationeryModelStoreContainer">
+    <EntitySet Name="RequisitionForms" EntityType="Self.RequisitionForms" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

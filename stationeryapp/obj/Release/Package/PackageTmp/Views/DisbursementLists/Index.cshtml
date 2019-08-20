@@ -1,0 +1,47 @@
+﻿@model IEnumerable<stationeryapp.Models.ViewModelD>
+
+@{
+    ViewBag.Title = "Disbursemnet Lists";
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    string tag = (string)ViewData["tag"];
+}
+
+
+<br>
+<h2>DisbursementList</h2>
+<br>
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>ListNumber</th>
+        <th>Department</th>
+        <th>CollectionPoint</th>
+        <th>CollectionDate</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>                
+                @*@item.disbursementList.ListNumber*@
+                @Html.DisplayFor(modelItem => item.disbursementList.ListNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departmentList.DepartmentCode)
+                @*@item.departmentList.DepartmentCode*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.collectionPoint.CollectionPointName)           
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.disbursementList.Date)         
+            </td>
+            <td class="success">
+                <a href='@Url.Action("Details","DisbursementListDetails",new { id= item.disbursementList.ListNumber,sessionId = sessionId})'> @item.disbursementList.Status</a>            
+            </td>
+        </tr>
+    }
+</table>
+

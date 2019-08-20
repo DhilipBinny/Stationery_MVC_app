@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stationeryModel14.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="StockAdjustmentVoucherDetails">
+    <Key>
+      <PropertyRef Name="AdjustmentDetailsNumber" />
+    </Key>
+    <Property Name="AdjustmentDetailsNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdjustmentVoucherNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuantityAdjusted" Type="int" />
+    <Property Name="Reason" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="stationeryModel14StoreContainer">
+    <EntitySet Name="StockAdjustmentVoucherDetails" EntityType="Self.StockAdjustmentVoucherDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

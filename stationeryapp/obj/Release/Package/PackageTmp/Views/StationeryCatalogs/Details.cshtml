@@ -1,0 +1,144 @@
+﻿@model stationeryapp.Models.StationeryCatalog
+
+@{
+    ViewBag.Title = "Stock Card Details";
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    int balance = 0;
+    string tag = (string)ViewData["tag"];
+}
+
+<h2>Stock Card</h2>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.ReorderLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderLevel)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.ReorderQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderQuantity)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitOfMeasure)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.BinNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BinNumber)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.SupplierList.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierList.SupplierName)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.SupplierList1.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierList1.SupplierName)
+        </dd>
+
+        <dt id="tr1">
+            @Html.DisplayNameFor(model => model.SupplierList2.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierList2.SupplierName)
+        </dd>
+
+    </dl>
+</div>
+
+<table class="table">
+
+    <tr>
+        <th>Date</th>
+        <th>Department/Supplier</th>
+        <th>Qty</th>
+        @*<th>Balance</th>*@
+    </tr>
+
+    @foreach (var item in ViewBag.history)
+    {
+<tr>
+    <td>@item.date</td>
+    @*<td>@item.date.ToShortDateString()</td>*@
+    <td>@item.name</td>
+    <td>@item.quantity</td>
+    @*<td>@(balance += item.quantity) </td>*@
+</tr>
+    }
+
+</table>
+
+<div style="font-size:medium" class="row">
+    @if (tag == "storeSupervisor" || tag == "storeManager")
+    {
+        <div class="col-md-1">@Html.ActionLink("Edit", "Edit", new { id = Model.ItemNumber, sessionId = sessionId })</div>
+    }  
+    <div class="col-md-2">@Html.ActionLink("Back To List", "Index", new { sessionId = sessionId })</div>
+</div>
+
+<style>
+
+    .tr1 {        
+       text-align:left
+
+    }
+</style>

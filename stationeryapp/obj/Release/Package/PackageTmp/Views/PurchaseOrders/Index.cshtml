@@ -1,0 +1,93 @@
+﻿@model IEnumerable<stationeryapp.Models.PurchaseOrder>
+
+@{
+    ViewBag.Title = "PO List";
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    string tag = (string)ViewData["tag"];
+}
+
+<h2>Purchase Order List</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PONumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierList.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOrdered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplyByDate)
+        </th>
+        <th>
+            Purchased Value
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedValue)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PONumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierList.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOrdered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplyByDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedValue)
+            </td>
+
+            <td>
+
+                @if (tag == "storeclerk")
+                {
+                    if (item.Status == "Not Submitted")
+                    {
+                        @Html.ActionLink("Order  ", "Details", new { id = item.PONumber, sessionId = sessionId })
+                    }
+                }
+
+                @if (item.Status == "Submitted")
+                {
+                    @Html.ActionLink("Receive", "Receive", new { id = item.PONumber, sessionId = sessionId })
+                }
+
+                @if (item.Status == "Received")
+                {
+                    @Html.ActionLink("View", "Edit", new { id = item.PONumber, sessionId = sessionId })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

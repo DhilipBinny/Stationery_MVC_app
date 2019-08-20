@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stationeryModel2StoreContainer" CdmEntityContainer="DisbursementLists">
+    <EntitySetMapping Name="DisbursementLists">
+      <EntityTypeMapping TypeName="stationeryModel2.DisbursementList">
+        <MappingFragment StoreEntitySet="DisbursementLists">
+          <ScalarProperty Name="ListNumber" ColumnName="ListNumber" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

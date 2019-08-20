@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stationeryModel13StoreContainer" CdmEntityContainer="StationeryRetrievalFormsDB">
+    <EntitySetMapping Name="StationeryRetrievalForms">
+      <EntityTypeMapping TypeName="stationeryModel13.StationeryRetrievalForm">
+        <MappingFragment StoreEntitySet="StationeryRetrievalForms">
+          <ScalarProperty Name="FormNumber" ColumnName="FormNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stationeryModel14StoreContainer" CdmEntityContainer="StockAdjustmentVoucherDetails">
+    <EntitySetMapping Name="StockAdjustmentVoucherDetails">
+      <EntityTypeMapping TypeName="stationeryModel14.StockAdjustmentVoucherDetail">
+        <MappingFragment StoreEntitySet="StockAdjustmentVoucherDetails">
+          <ScalarProperty Name="AdjustmentDetailsNumber" ColumnName="AdjustmentDetailsNumber" />
+          <ScalarProperty Name="AdjustmentVoucherNumber" ColumnName="AdjustmentVoucherNumber" />
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="QuantityAdjusted" ColumnName="QuantityAdjusted" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

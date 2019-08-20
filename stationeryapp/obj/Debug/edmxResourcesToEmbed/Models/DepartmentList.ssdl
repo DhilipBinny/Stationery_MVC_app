@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stationeryModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DepartmentList">
+    <Key>
+      <PropertyRef Name="DepartmentCode" />
+    </Key>
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar(max)" />
+    <Property Name="TelephoneNo" Type="int" />
+    <Property Name="FaxNo" Type="int" />
+    <Property Name="HeadId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectionPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="RepresentativeId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="stationeryModel1StoreContainer">
+    <EntitySet Name="DepartmentList" EntityType="Self.DepartmentList" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

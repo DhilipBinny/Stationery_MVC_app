@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stationeryModel11.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="StationeryCatalog">
+    <Key>
+      <PropertyRef Name="ItemNumber" />
+    </Key>
+    <Property Name="ItemNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ReorderLevel" Type="int" />
+    <Property Name="ReorderQuantity" Type="int" />
+    <Property Name="UnitOfMeasure" Type="nvarchar" MaxLength="50" />
+    <Property Name="BinNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="float" />
+    <Property Name="SupplierCode1" Type="nvarchar" MaxLength="50" />
+    <Property Name="SupplierCode2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SupplierCode3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Balance" Type="int" />
+  </EntityType>
+  <EntityContainer Name="stationeryModel11StoreContainer">
+    <EntitySet Name="StationeryCatalog" EntityType="Self.StationeryCatalog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

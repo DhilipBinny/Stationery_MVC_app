@@ -1,0 +1,107 @@
+﻿
+@Scripts.Render("~/Scripts/dropdownOnchange.js")
+@using stationeryapp.Models
+@model RequisitionFormDetail
+@{
+    ViewBag.Title = "newrequest";
+    Boolean single_form_view = ViewData["single_form_view"] != null ? (Boolean)ViewData["single_form_view"] : false;
+    List<StationeryCatalog> items = (List<StationeryCatalog>)ViewData["catalog_list"];
+    List<RequisitionFormDetail> form_cart = (List<RequisitionFormDetail>)ViewData["form_cart"];
+    Employee emp = (Employee)ViewData["emp"];
+    DepartmentList emp_dept = (DepartmentList)ViewData["emp_dept"];
+    string form_number = (string)ViewData["form_number"];
+    RequisitionForm form = (RequisitionForm)ViewData["req_form"];
+    string sid = (string)ViewData["sid"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_employeeheader")
+@Html.Partial("_employeeMenuFragment")
+@Html.Partial("_emp_notify")
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<div style="margin-left:15%;margin-top:5%">
+
+    <h4>Form number : @(form_number)</h4>
+    <h4>Employee name : @emp.FirstName @emp.LastName</h4>
+    <h4>Department name : @emp_dept.DepartmentName</h4>
+
+    <table id="myTable" class="table table-bordered">
+        <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+        </tr>
+        @if (form_cart != null)
+        {
+            foreach (var item in form_cart)
+            {
+                <tr>
+                    <td>
+                        @items.Find(x => x.ItemNumber == item.ItemNumber).Description
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    @if (!single_form_view)
+                    {
+                        <td>
+                            <button class="btn btn-warning" onclick="location.href='@Url.Action("removerequestitem", "Employee", new { form_no=@item.FormNumber, form_detail_no=@item.FormDetailsNumber, sid = sid})'">Remove Item</button>
+                        </td>
+                    }
+
+                </tr>
+            }
+        }
+
+        @if (!single_form_view)
+        {
+            using (Html.BeginForm("addnew", "Employee", new { sid = sid }, FormMethod.Post))
+            {
+
+                <tr>
+                    <td>
+                        @Html.DropDownList("Select Item", items.Select(item => new SelectListItem { Text = item.Description, Value = item.ItemNumber }), new { id = "itemId", onchange = "onChange()" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Quantity, new { type = "number", min = "1", placeholder = "Enter Quantity", required = "required" })
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display:none;">
+                        @Html.HiddenFor(x => x.FormNumber, new { @Value = @form_number })
+                    </td>
+                    <td style="display:none;">
+                        @Html.HiddenFor(x => x.ItemNumber, new { id = "itemCode", @Value = "C001" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add New" class="btn btn-success">
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    @if (form != null && form.Comments != "" && form.Comments != null)
+    {
+
+        <div>
+            STATUS : @form.Status<br />
+            COMMENTS :  @form.Comments
+        </div>
+
+    }
+    @if (form_cart != null && !single_form_view)
+    {
+        using (Html.BeginForm("submitrequest", "Employee", new { sid = sid }, FormMethod.Post))
+        {
+            <input type="hidden" value="@form_number" name="form_number" />
+            <input id="itemCode" type="hidden" value="@emp.Id" name="emp_id" />
+            <input type="submit" value="Submit" class="btn btn-primary">
+        }
+    }
+</div>

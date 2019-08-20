@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75A66003-2405-4662-BADB-7F45D204C88C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>stationeryapp</RootNamespace>
+    <AssemblyName>stationeryapp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DisbursementListDetailsController.cs" />
+    <Compile Include="Controllers\DisbursementListsController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HodController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OutstandingListsController.cs" />
+    <Compile Include="Controllers\PurchaseOrdersController.cs" />
+    <Compile Include="Controllers\ReorderReportController.cs" />
+    <Compile Include="Controllers\ReportHomeController.cs" />
+    <Compile Include="Controllers\RequisitionFormDetailsController.cs" />
+    <Compile Include="Controllers\RequisitionFormsController.cs" />
+    <Compile Include="Controllers\RequisitionReportController.cs" />
+    <Compile Include="Controllers\StationeryCatalogReportController.cs" />
+    <Compile Include="Controllers\StationeryCatalogsController.cs" />
+    <Compile Include="Controllers\StationeryRetrievalFormsController.cs" />
+    <Compile Include="Controllers\StockAdjustmentVouchersController.cs" />
+    <Compile Include="Controllers\StoreManagersController.cs" />
+    <Compile Include="Controllers\StoreSupervisorsController.cs" />
+    <Compile Include="Controllers\SupplierListsController.cs" />
+    <Compile Include="Controllers\TrendController.cs" />
+    <Compile Include="Filters\empfilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdjList.cs" />
+    <Compile Include="Models\CollectionPoint.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentList.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detail.cs" />
+    <Compile Include="Models\DisbursementList.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementListDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OutstandingList.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POForm.cs" />
+    <Compile Include="Models\PurchaseOrder.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrderDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionForm.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionFormDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Retrieval.cs" />
+    <Compile Include="Models\RetrievalHistory.cs" />
+    <Compile Include="Models\RetrievalRecord.cs" />
+    <Compile Include="Models\CollectionPoints.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CollectionPoints.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CollectionPoints.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CollectionPoints.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CollectionPoints.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CollectionPoints.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConsolidatedRequest.cs" />
+    <Compile Include="Models\employee_utility.cs" />
+    <Compile Include="Models\ReorderViewModel.cs" />
+    <Compile Include="Models\RequisitionViewModel.cs" />
+    <Compile Include="Models\RForm.cs" />
+    <Compile Include="Models\StationeryCatalog.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalForm.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalFormDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVoucher.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVoucherDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreClerk.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreManager.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreSupervisor.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierList.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\util.cs" />
+    <Compile Include="Models\ViewModelD.cs" />
+    <Compile Include="Models\ViewModelDDetails.cs" />
+    <Compile Include="Models\ViewModelOutstanding.cs" />
+    <Compile Include="Models\ViewModelRetrieval.cs" />
+    <Compile Include="Reports\InventoryStatusReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryStatusReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\DepartmentList.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentList.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentList.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentList1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentList.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementListDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementListDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementListDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementListDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementListDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementListDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementLists.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementLists.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementLists.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementLists.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisbursementLists.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementLists.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OutstandingList.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingList.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OutstandingList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingList.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OutstandingList1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingList.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrderDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrderDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrderDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrderDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrders.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrders.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrders.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrders.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PurchaseOrders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseOrders.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReorderReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReorderReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\RequisitionFormDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionFormDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionFormDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionFormDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionFormDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionFormDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionForms.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionForms.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionForms.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionForms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequisitionForms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionForms.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryCatalog.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryCatalog.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryCatalog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryCatalog.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryCatalog1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryCatalog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalFormDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalFormDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalFormDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalFormDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalFormDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalFormDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalForms.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalForms.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalForms.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalForms.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StationeryRetrievalForms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationeryRetrievalForms.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVoucherDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVoucherDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVoucherDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVoucherDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVoucherDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVoucherDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVouchers.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVouchers.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVouchers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVouchers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockAdjustmentVouchers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockAdjustmentVouchers.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreClerk.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreClerk.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreClerk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreClerk.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreClerk1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreClerk.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreManager.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreManager.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreManager.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreManager1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreSupervisor.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreSupervisor.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreSupervisor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreSupervisor.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreSupervisor1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreSupervisor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierList.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierList.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierList.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierList1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierList.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\RequisitionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequisitionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\GenerateID.cs" />
+    <Compile Include="Util\StringExtension.cs" />
+    <Compile Include="Views\StationeryCatalogReport\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\StationeryCatalogReport\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ReportsIcon.png" />
+    <Content Include="Content\TrendsIcon.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\addreq.png" />
+    <Content Include="Images\assign.png" />
+    <Content Include="Images\bellstore2.png" />
+    <Content Include="Images\bellstore3.jpg" />
+    <Content Include="Images\Catalog.PNG" />
+    <Content Include="Images\DisbusementList.PNG" />
+    <Content Include="Images\editinfo.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\instagram.png" />
+    <Content Include="Images\itemreqs.png" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\logo.PNG" />
+    <Content Include="Images\logo2.jpg" />
+    <Content Include="Images\oldreqs.png" />
+    <Content Include="Images\Outstanding.PNG" />
+    <Content Include="Images\pendingreqs.png" />
+    <Content Include="Images\PO.PNG" />
+    <Content Include="Images\profile.png" />
+    <Content Include="Images\Reports.PNG" />
+    <Content Include="Images\Requests.JPG" />
+    <Content Include="Images\requests.png" />
+    <Content Include="Images\RetrivalForm.PNG" />
+    <Content Include="Images\stationery-management3.jpg" />
+    <Content Include="Images\stationery.png" />
+    <Content Include="Images\StationeryManagementlogin.jpg" />
+    <Content Include="Images\StationeryManagementlogin2.jpg" />
+    <Content Include="Images\StockAjustment.PNG" />
+    <Content Include="Images\storeclarkprofile.png" />
+    <Content Include="Images\storeclarkprofile2.png" />
+    <Content Include="Images\supplier1.png" />
+    <Content Include="Images\suppliers2.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\youtube.png" />
+    <Content Include="Models\CollectionPoints.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CollectionPoints.edmx</DependentUpon>
+      <LastGenOutput>CollectionPoints.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CollectionPoints.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CollectionPoints.edmx</DependentUpon>
+      <LastGenOutput>CollectionPoints.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DepartmentList.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentList.edmx</DependentUpon>
+      <LastGenOutput>DepartmentList.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DepartmentList.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentList.edmx</DependentUpon>
+      <LastGenOutput>DepartmentList1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DisbursementListDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DisbursementListDetails.edmx</DependentUpon>
+      <LastGenOutput>DisbursementListDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DisbursementListDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DisbursementListDetails.edmx</DependentUpon>
+      <LastGenOutput>DisbursementListDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DisbursementLists.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DisbursementLists.edmx</DependentUpon>
+      <LastGenOutput>DisbursementLists.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DisbursementLists.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DisbursementLists.edmx</DependentUpon>
+      <LastGenOutput>DisbursementLists.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Employee.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Employee.edmx</DependentUpon>
+      <LastGenOutput>Employee.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Employee.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Employee.edmx</DependentUpon>
+      <LastGenOutput>Employee1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OutstandingList.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OutstandingList.edmx</DependentUpon>
+      <LastGenOutput>OutstandingList.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OutstandingList.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OutstandingList.edmx</DependentUpon>
+      <LastGenOutput>OutstandingList1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PurchaseOrderDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchaseOrderDetails.edmx</DependentUpon>
+      <LastGenOutput>PurchaseOrderDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PurchaseOrderDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchaseOrderDetails.edmx</DependentUpon>
+      <LastGenOutput>PurchaseOrderDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PurchaseOrders.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchaseOrders.edmx</DependentUpon>
+      <LastGenOutput>PurchaseOrders.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PurchaseOrders.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchaseOrders.edmx</DependentUpon>
+      <LastGenOutput>PurchaseOrders.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RequisitionFormDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RequisitionFormDetails.edmx</DependentUpon>
+      <LastGenOutput>RequisitionFormDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RequisitionFormDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RequisitionFormDetails.edmx</DependentUpon>
+      <LastGenOutput>RequisitionFormDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RequisitionForms.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RequisitionForms.edmx</DependentUpon>
+      <LastGenOutput>RequisitionForms.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RequisitionForms.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RequisitionForms.edmx</DependentUpon>
+      <LastGenOutput>RequisitionForms.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryCatalog.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryCatalog.edmx</DependentUpon>
+      <LastGenOutput>StationeryCatalog.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryCatalog.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryCatalog.edmx</DependentUpon>
+      <LastGenOutput>StationeryCatalog1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryRetrievalFormDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryRetrievalFormDetails.edmx</DependentUpon>
+      <LastGenOutput>StationeryRetrievalFormDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryRetrievalFormDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryRetrievalFormDetails.edmx</DependentUpon>
+      <LastGenOutput>StationeryRetrievalFormDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryRetrievalForms.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryRetrievalForms.edmx</DependentUpon>
+      <LastGenOutput>StationeryRetrievalForms.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StationeryRetrievalForms.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StationeryRetrievalForms.edmx</DependentUpon>
+      <LastGenOutput>StationeryRetrievalForms.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StockAdjustmentVoucherDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StockAdjustmentVoucherDetails.edmx</DependentUpon>
+      <LastGenOutput>StockAdjustmentVoucherDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StockAdjustmentVoucherDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StockAdjustmentVoucherDetails.edmx</DependentUpon>
+      <LastGenOutput>StockAdjustmentVoucherDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StockAdjustmentVouchers.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StockAdjustmentVouchers.edmx</DependentUpon>
+      <LastGenOutput>StockAdjustmentVouchers.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StockAdjustmentVouchers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StockAdjustmentVouchers.edmx</DependentUpon>
+      <LastGenOutput>StockAdjustmentVouchers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreClerk.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreClerk.edmx</DependentUpon>
+      <LastGenOutput>StoreClerk.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreClerk.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreClerk.edmx</DependentUpon>
+      <LastGenOutput>StoreClerk1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreManager.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreManager.edmx</DependentUpon>
+      <LastGenOutput>StoreManager.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreManager.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreManager.edmx</DependentUpon>
+      <LastGenOutput>StoreManager1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreSupervisor.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreSupervisor.edmx</DependentUpon>
+      <LastGenOutput>StoreSupervisor.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StoreSupervisor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StoreSupervisor.edmx</DependentUpon>
+      <LastGenOutput>StoreSupervisor1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SupplierList.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SupplierList.edmx</DependentUpon>
+      <LastGenOutput>SupplierList.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SupplierList.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SupplierList.edmx</DependentUpon>
+      <LastGenOutput>SupplierList1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\CollectionPoints.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CollectionPoints.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CollectionPoints.edmx.diagram">
+      <DependentUpon>CollectionPoints.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DisbursementListDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DisbursementListDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DisbursementListDetails.edmx.diagram">
+      <DependentUpon>DisbursementListDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DisbursementLists.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DisbursementLists.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DisbursementLists.edmx.diagram">
+      <DependentUpon>DisbursementLists.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PurchaseOrderDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrderDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PurchaseOrderDetails.edmx.diagram">
+      <DependentUpon>PurchaseOrderDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PurchaseOrders.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PurchaseOrders.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PurchaseOrders.edmx.diagram">
+      <DependentUpon>PurchaseOrders.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RequisitionFormDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RequisitionFormDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RequisitionFormDetails.edmx.diagram">
+      <DependentUpon>RequisitionFormDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StationeryRetrievalFormDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StationeryRetrievalFormDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StationeryRetrievalFormDetails.edmx.diagram">
+      <DependentUpon>StationeryRetrievalFormDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StockAdjustmentVoucherDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StockAdjustmentVoucherDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StockAdjustmentVoucherDetails.edmx.diagram">
+      <DependentUpon>StockAdjustmentVoucherDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StockAdjustmentVouchers.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StockAdjustmentVouchers.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StockAdjustmentVouchers.edmx.diagram">
+      <DependentUpon>StockAdjustmentVouchers.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RequisitionForms.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RequisitionForms.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RequisitionForms.edmx.diagram">
+      <DependentUpon>RequisitionForms.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StoreClerk.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StoreClerk.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StoreClerk.edmx.diagram">
+      <DependentUpon>StoreClerk.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StoreManager.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StoreManager.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StoreManager.edmx.diagram">
+      <DependentUpon>StoreManager.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StoreSupervisor.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StoreSupervisor.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StoreSupervisor.edmx.diagram">
+      <DependentUpon>StoreSupervisor.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SupplierList.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SupplierList.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SupplierList.edmx.diagram">
+      <DependentUpon>SupplierList.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Employee.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Employee.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Employee.edmx.diagram">
+      <DependentUpon>Employee.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DepartmentList.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DepartmentList.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DepartmentList.edmx.diagram">
+      <DependentUpon>DepartmentList.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StationeryCatalog.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StationeryCatalog.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StationeryCatalog.edmx.diagram">
+      <DependentUpon>StationeryCatalog.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\OutstandingList.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OutstandingList.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\OutstandingList.edmx.diagram">
+      <DependentUpon>OutstandingList.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StationeryRetrievalForms.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StationeryRetrievalForms.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StationeryRetrievalForms.edmx.diagram">
+      <DependentUpon>StationeryRetrievalForms.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\adstationery - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\dropdownOnchange.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\StationeryCatalogReport\Report.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\StationeryCatalogReport\Create.cshtml" />
+    <Content Include="Views\StationeryCatalogReport\Delete.cshtml" />
+    <Content Include="Views\StationeryCatalogReport\Details.cshtml" />
+    <Content Include="Views\StationeryCatalogReport\Edit.cshtml" />
+    <Content Include="Views\StationeryCatalogReport\Index.cshtml" />
+    <Content Include="Views\ReorderReport\Create.cshtml" />
+    <Content Include="Views\ReorderReport\Delete.cshtml" />
+    <Content Include="Views\ReorderReport\Details.cshtml" />
+    <Content Include="Views\ReorderReport\Edit.cshtml" />
+    <Content Include="Views\ReorderReport\Index.cshtml" />
+    <Content Include="Views\RequisitionFormDetails\Create.cshtml" />
+    <Content Include="Views\RequisitionFormDetails\Delete.cshtml" />
+    <Content Include="Views\RequisitionFormDetails\Details.cshtml" />
+    <Content Include="Views\RequisitionFormDetails\Edit.cshtml" />
+    <Content Include="Views\RequisitionFormDetails\Index.cshtml" />
+    <Content Include="Views\RequisitionReport\Create.cshtml" />
+    <Content Include="Views\RequisitionReport\Delete.cshtml" />
+    <Content Include="Views\RequisitionReport\Details.cshtml" />
+    <Content Include="Views\RequisitionReport\Edit.cshtml" />
+    <Content Include="Views\RequisitionReport\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\RequisitionForms\Index.cshtml" />
+    <Content Include="Views\ReportHome\Index.cshtml" />
+    <Content Include="Views\DisbursementListDetails\Details.cshtml" />
+    <Content Include="Views\DisbursementListDetails\Index.cshtml" />
+    <Content Include="Views\DisbursementLists\Index.cshtml" />
+    <Content Include="Views\SupplierLists\Create.cshtml" />
+    <Content Include="Views\SupplierLists\Delete.cshtml" />
+    <Content Include="Views\SupplierLists\Details.cshtml" />
+    <Content Include="Views\SupplierLists\Edit.cshtml" />
+    <Content Include="Views\SupplierLists\Index.cshtml" />
+    <Content Include="Views\Login\EmployeeIndex.cshtml" />
+    <Content Include="Views\HoD\assigndelegate.cshtml" />
+    <Content Include="Views\HoD\editdeptinfo.cshtml" />
+    <Content Include="Views\HoD\Index.cshtml" />
+    <Content Include="Views\HoD\req_forms.cshtml" />
+    <Content Include="Views\HoD\stationaryrequesthistory.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\newrequest.cshtml" />
+    <Content Include="Views\Employee\notify.cshtml" />
+    <Content Include="Views\Employee\sendmail.cshtml" />
+    <Content Include="Views\Employee\viewemail.cshtml" />
+    <Content Include="Views\Employee\viewrequest.cshtml" />
+    <Content Include="Views\Shared\_employeeheader.cshtml" />
+    <Content Include="Views\Shared\_employeeMenuFragment.cshtml" />
+    <Content Include="Views\Shared\_emp_notify.cshtml" />
+    <Content Include="Views\Shared\_hodheader.cshtml" />
+    <Content Include="Views\Shared\_hodMenuFragment.cshtml" />
+    <Content Include="Views\Shared\_hod_notify.cshtml" />
+    <Content Include="Views\StationeryRetrievalForms\Create.cshtml" />
+    <Content Include="Views\StationeryRetrievalForms\Delete.cshtml" />
+    <Content Include="Views\StationeryRetrievalForms\Details.cshtml" />
+    <Content Include="Views\StationeryRetrievalForms\Edit.cshtml" />
+    <Content Include="Views\StationeryRetrievalForms\Index.cshtml" />
+    <Content Include="Views\OutstandingLists\Create.cshtml" />
+    <Content Include="Views\OutstandingLists\Delete.cshtml" />
+    <Content Include="Views\OutstandingLists\Details.cshtml" />
+    <Content Include="Views\OutstandingLists\Edit.cshtml" />
+    <Content Include="Views\OutstandingLists\Index.cshtml" />
+    <Content Include="Views\StoreManagers\Index.cshtml" />
+    <Content Include="Views\Login\LoginStoreManager.cshtml" />
+    <Content Include="Views\StoreSupervisors\Index.cshtml" />
+    <Content Include="Views\Login\LoginStoreSupervisor.cshtml" />
+    <Content Include="Views\PurchaseOrders\Create.cshtml" />
+    <Content Include="Views\PurchaseOrders\Delete.cshtml" />
+    <Content Include="Views\PurchaseOrders\Details.cshtml" />
+    <Content Include="Views\PurchaseOrders\Edit.cshtml" />
+    <Content Include="Views\PurchaseOrders\Index.cshtml" />
+    <Content Include="Views\PurchaseOrders\Receive.cshtml" />
+    <Content Include="Views\StationeryCatalogs\Create.cshtml" />
+    <Content Include="Views\StationeryCatalogs\Delete.cshtml" />
+    <Content Include="Views\StationeryCatalogs\Details.cshtml" />
+    <Content Include="Views\StationeryCatalogs\Edit.cshtml" />
+    <Content Include="Views\StationeryCatalogs\Index.cshtml" />
+    <Content Include="Views\StockAdjustmentVouchers\Create.cshtml" />
+    <Content Include="Views\StockAdjustmentVouchers\Delete.cshtml" />
+    <Content Include="Views\StockAdjustmentVouchers\Details.cshtml" />
+    <Content Include="Views\StockAdjustmentVouchers\Edit.cshtml" />
+    <Content Include="Views\StockAdjustmentVouchers\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_Store.cshtml" />
+    <Content Include="Views\HoD\viewhistorybyitem.cshtml" />
+    <Content Include="Views\Trend\DeptSubmit.cshtml" />
+    <Content Include="Views\Trend\TrendAnalysis.cshtml" />
+    <Content Include="Views\Trend\TrendSubmit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\InventoryStatusReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventoryStatusReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReorderReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReorderReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RequisitionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RequisitionReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50240</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50240/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

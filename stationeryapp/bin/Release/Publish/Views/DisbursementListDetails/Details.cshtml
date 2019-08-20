@@ -1,0 +1,81 @@
+﻿
+@model List<stationeryapp.Models.ViewModelDDetails>
+
+@{
+    ViewBag.Title = "DesebusermentDetails";
+    DateTime date = (DateTime)ViewData["disbursementList"];
+    string collection = (string)ViewData["collection"];
+    string deptName = (string)ViewData["deparment"];
+    string firstName = (string)ViewData["employeeF"];
+    string lastName = (string)ViewData["employeeL"];
+    string name = firstName + "" + lastName;
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    string tag = (string)ViewData["tag"];
+    string errorMeg = (string)ViewData["errorMeg"];
+}
+
+@if (errorMeg != null)
+{
+    <script>alert("@errorMeg");</script>
+}
+<h2>DisbursementList Details</h2>
+<br>
+@using (Html.BeginForm("Update", "DisbursementListDetails", FormMethod.Post))
+{
+    @Html.Hidden("sessionId", sessionId)
+    @Html.Hidden("tag", tag)
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th>ItemNumber</th>
+            <th> Category </th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>QuantityReceived</th>
+            <th>Remarks</th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            @Html.HiddenFor(model => model[i].disbursementListDetail.ListDetailsNumber)
+            @Html.HiddenFor(model => model[i].disbursementList.ListNumber)
+            <tr>
+                <td>
+                    @Model[i].stationeryCatalog.ItemNumber
+                </td>
+                <td>
+                    @Model[i].stationeryCatalog.Category
+                </td>
+                <td>
+                    @Model[i].stationeryCatalog.Description
+                </td>
+                <td>
+                    @Model[i].disbursementListDetail.Quantity
+                </td>
+                <td style="background-color:aliceblue">
+                    @*"if(value>30)value=30;if(value.length>2)value=value.slice(0,2);if(value<0)value=0"*@
+                    @Html.TextBoxFor(model => model[i].disbursementListDetail.QuantityReceived, new { id = "txtPlace", Value = Model[i].disbursementListDetail.Quantity })
+                </td>
+
+                <td style="background-color:aliceblue">
+                    @Html.TextBoxFor(model => model[i].disbursementListDetail.Remarks)
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="form-group">
+        <input class="btn" type="submit" value="Submit" style="background-color:lightblue" />
+    </div>
+
+}
+<br>
+<div style="font-size:medium">
+
+    <a href='@Url.Action("Index","DisbursementLists",new {sessionId = sessionId})'> Back To List</a>
+</div>
+<br>
+<br>
+<p><b>Collection Date: </b> @date.ToString("MM/dd/yyyy")</p>
+<p><b>Collection Point:</b> @collection</p>
+<p><b>Representative Name:</b> @name</p>
+<p><b>Department: </b>@deptName</p>
+

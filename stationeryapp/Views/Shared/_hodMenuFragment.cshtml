@@ -1,0 +1,69 @@
+﻿
+@using stationeryapp.Models
+@{
+    Employee emp;
+    string sid = (string)Session["sid"];
+}
+@if ((Session["user"]) != null)
+{
+
+    emp = (Employee)HttpContext.Current.Session["user"];
+}
+else
+{
+    emp = new Employee();
+}
+<style>
+    .sidenav {
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        z-index: 1;
+        top: 50px;
+        left: 0px;
+        background: #eee;
+        overflow-x: hidden;
+        padding: 8px 0;
+    }
+
+        .sidenav a {
+            margin: 40px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #2874a6;
+            display: block;
+        }
+
+            .sidenav a:hover {
+                color: black;
+            }
+
+        .sidenav .active {
+            background: #3498db;
+            color: white;
+        }
+</style>
+<div class="sidenav">
+    <a href='@Url.Action("index", "Hod",new { id=emp.Id, sid= sid})'>Home</a>
+    <a href='@Url.Action("newstationaryrequest", "Hod",new { id=emp.Id, sid= sid})'>Pending Requests</a>
+    <a href='@Url.Action("stationaryrequesthistory", "Hod",new { id=emp.Id, sid= sid})'>History By Request Number</a>
+    <a href='@Url.Action("editdeptinfo", "Hod",new { id=emp.Id, sid= sid})'>Edit Dept Info</a>
+
+    @if (emp.Designation == "Head")
+    {
+        <a href='@Url.Action("assigndelegate", "Hod",new { id=emp.Id, sid= sid})'>Delegate</a>
+    }
+    <a href='@Url.Action("viewhistorybyitem", "Hod",new { id=emp.Id, sid= sid})'>History By Item</a>
+
+
+</div>
+@section Scripts {
+    <script>
+        $('.sidenav a').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        }  </script>
+}
+
+
+
+

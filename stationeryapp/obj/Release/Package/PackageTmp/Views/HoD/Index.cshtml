@@ -1,0 +1,62 @@
+﻿@using stationeryapp.Models;
+@{
+    ViewBag.Title = "Index";
+    Employee emp = (Employee)Session["user"];
+    string sid = (string)ViewData["sid"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_hodheader")
+@Html.Partial("_hodMenuFragment")
+@Html.Partial("_hod_notify")
+
+<style>
+    .tbl {
+        width: 60%;
+        overflow: hidden;
+        margin-top: 50px;
+        text-align:center;
+    }
+
+        .tbl td {
+            width: 200px;
+            height: 150px;
+            align-content: center;
+        }
+</style>
+
+<div id="main" style="margin-left:15%; margin-top: 5%;">
+    <h3 style="text-align:center">
+        Welcome, @emp.FirstName @emp.LastName !
+    </h3>
+    <table class="tbl" align="center">
+        <tr>
+            <td>
+                <a href='@Url.Action("newstationaryrequest", "Hod",new { id=emp.Id, sid= sid})'><img style="width: 70px; height: 70px;" src="~/Images/pendingreqs.png" /></a>
+                <br />Pending Requests
+            </td>
+            <td>
+                <a href='@Url.Action("stationaryrequesthistory", "Hod",new { id=emp.Id, sid= sid})'><img style="width: 70px; height: 70px;" src="~/Images/oldreqs.png" /></a>
+                <br />History By Request Number
+            </td>
+            <td>
+                <a href='@Url.Action("viewhistorybyitem", "Hod",new { id=emp.Id, sid= sid})'><img style="width: 70px; height: 70px;" src="~/Images/itemreqs.png" /></a>
+                <br />History By Item
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href='@Url.Action("editdeptinfo", "Hod",new { id=emp.Id, sid=sid})'><img style="width: 70px; height: 70px;" src="~/Images/editinfo.png" /></a>
+                <br />Edit Department Information
+            </td>
+            @if (emp.Designation =="Head")
+            {
+                <td>
+                    <a href='@Url.Action("assigndelegate", "Hod",new { id=emp.Id, sid=sid})'><img style="width: 70px; height: 70px;" src="~/Images/assign.png" /></a>
+                    <br />Delegate
+                </td>
+            }
+
+        </tr>
+    </table>
+</div>

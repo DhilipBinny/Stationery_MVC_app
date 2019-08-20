@@ -1,0 +1,51 @@
+﻿@model IEnumerable<stationeryapp.Models.StationeryRetrievalForm>
+
+@{
+    ViewBag.Title = "Retrieval Form List";
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    string tag = (string)ViewData["tag"];
+}
+
+<h2>List of Retrieval Forms</h2>
+
+<table class="table table table-bordered table-striped ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.FormNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelitem => item.FormNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @if (item.Status == "Pending")
+            {
+                @Html.ActionLink("Retrieve", "Edit", new { id = item.FormNumber, sessionId = sessionId })
+            }
+            @if (item.Status == "Submitted")
+            {
+                @Html.ActionLink("View", "Details", new { id = item.FormNumber, sessionId = sessionId })
+            }
+            
+        </td>
+    </tr>
+}
+</table>
+

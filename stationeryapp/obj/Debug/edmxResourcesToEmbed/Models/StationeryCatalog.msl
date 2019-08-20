@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stationeryModel11StoreContainer" CdmEntityContainer="StationeryCatalogDB">
+    <EntitySetMapping Name="StationeryCatalogs">
+      <EntityTypeMapping TypeName="stationeryModel11.StationeryCatalog">
+        <MappingFragment StoreEntitySet="StationeryCatalog">
+          <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+          <ScalarProperty Name="ReorderQuantity" ColumnName="ReorderQuantity" />
+          <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
+          <ScalarProperty Name="BinNumber" ColumnName="BinNumber" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SupplierCode1" ColumnName="SupplierCode1" />
+          <ScalarProperty Name="SupplierCode2" ColumnName="SupplierCode2" />
+          <ScalarProperty Name="SupplierCode3" ColumnName="SupplierCode3" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

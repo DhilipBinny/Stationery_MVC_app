@@ -1,0 +1,52 @@
+﻿@model List<stationeryapp.Models.ViewModelOutstanding>
+
+@{
+    ViewBag.Title = "Outstanding";
+    string sessionId = (string)ViewData["sessionId"];
+    string username = (string)ViewData["username"];
+    string tag = (string)ViewData["tag"];
+}
+
+<h2>Outstanding List</h2>
+
+<table class="table table-bordered table-striped" align="center">
+    <tr>
+        <th>Item Code</th>
+        <th>Description</th>
+        <th>Shortage Quantity</th>
+        <th>Inventory Quantity</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.ShortageQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InventoryBalance)
+                </td>
+                <td class="success">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @if (item.ShortageQuantity < item.InventoryBalance)
+                    {
+                        @Html.ActionLink("Adjust", "Create", "StockAdjustmentVouchers", new { sessionId = sessionId }, null)
+                    }
+                </td>
+               
+            </tr>
+        }
+    }
+
+</table>

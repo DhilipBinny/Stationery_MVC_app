@@ -1,0 +1,133 @@
+﻿
+@{
+    String msg = "";
+    ViewBag.Title = "Index";
+    msg = (String)ViewData["msg"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+       
+        .login-form {
+            width: 340px;
+            margin: 95px auto;
+        }
+
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+
+        .input-group-addon .fa {
+            font-size: 18px;
+        }
+
+        .btn {
+            font-size: 15px;
+            font-weight: bold;
+            background: #3498db;
+        }
+
+        #Header {
+            background-color: #3498db;
+            border-color: #3498db;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10%;
+ }
+
+        #footer {
+            left:0px;
+            position:absolute;
+            width: 100%;
+            height: auto;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar-fixed-top" id="Header">
+        
+            <div class="navbar-brand-center" style="color: white; text-align:center; margin-top: 20px;" >
+                @*<ul class="nav navbar-nav">
+                   <li><label class="navbar-brand" style="color: white;"> STATIONERY MANAGEMENT SYSTEM</label></li>
+                </ul>*@
+                <div>
+                    <h4><b>STATIONERY MANAGEMENT SYSTEM</b></h4>
+                </div>
+               
+            </div>
+        
+    </div>
+    <div class="login-form">
+        @using (Html.BeginForm("EmployeeLogin", "Login", FormMethod.Post))
+        {
+            <form>
+                <img src="~/Images/logo.PNG" alt="Logo" style="height:100px; width: 100px; margin-left:90px;" />
+                <h3 class="text-center">Employee Login</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        @Html.TextBox("Username", "", new { id = "Username", @class = "form-control", placeholder = "Username", required = true })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        @Html.Password("Password", "", new { id = "Password", @class = "form-control", placeholder = "Password", required = true })
+                    </div>
+                    @*<div>
+                        @if (@msg.Equals("invalid password"))
+                        {
+                            <div style="color:red;" align="right" colspan="2">INVALID PASSWORD</div>
+                        }
+                        @if (@msg.Equals("invalid user"))
+                        {
+                            <div style="color:red" align="right" colspan="2">USER NOT FOUND</div>
+                        }
+                    </div>*@
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                </div>
+            </form>
+        }
+        <div style="color:red;" align="center" colspan="2">@msg</div>
+
+    </div>
+
+    <div id="footer">
+        <h4><span>Logic University</span></h4>
+        <i class="fa fa-location-arrow"></i>
+        21 Lower Kent Ridge Road, Singapore 119077<br>
+        <i class="fa fa-phone"></i> +65 6516 666 <i class="fa glyphicon-envelope"></i>support@logic.edu.com
+        <hr />
+        <h6><b>&copy; @DateTime.Now.Year Login University. All Copyright Reserved.</b></h6>
+    </div>
+</body>
+</html>

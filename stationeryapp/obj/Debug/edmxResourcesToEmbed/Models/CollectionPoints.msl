@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stationeryModel4StoreContainer" CdmEntityContainer="CollectionPoints">
+    <EntitySetMapping Name="CollectionPoints">
+      <EntityTypeMapping TypeName="stationeryModel4.CollectionPoint">
+        <MappingFragment StoreEntitySet="CollectionPoints">
+          <ScalarProperty Name="CollectionPointCode" ColumnName="CollectionPointCode" />
+          <ScalarProperty Name="CollectionPointName" ColumnName="CollectionPointName" />
+          <ScalarProperty Name="CollectionTime" ColumnName="CollectionTime" />
+          <ScalarProperty Name="StoreClerk" ColumnName="StoreClerk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
